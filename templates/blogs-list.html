@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<title>Psychologist</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<!--[if lt IE 9]>
+		<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+	<![endif]-->
+
+	{% comment %} <div class="preloader">
+		<div class="preloader_image"></div>
+	</div> {% endcomment %}
+
+	<!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">
+				<i class="rt-icon2-cross2"></i>
+			</span>
+		</button>
+		<div class="widget widget_search">
+			<form method="get" class="searchform search-form form-inline" action="./">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+				</div>
+				<button type="submit" class="theme_button">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls with_padding">
+			<!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+			<!--
+		<ul class="list-unstyled">
+			<li>Message To User</li>
+		</ul>
+		-->
+
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+			<section class="page_topline cs table_section table_section_md columns_padding_0">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 text-center text-md-left">
+							<ul class="inline-dropdown inline-block divided_content">
+
+								<li class="dropdown login-dropdown">
+									<a class="header-button" data-target="#" href="./" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<i class="fa fa-user"></i>
+										<span class="header-button-text">Login</span>
+									</a>
+
+									<div class="dropdown-menu ls with_padding">
+
+										<p>
+											<strong class="grey">If you have an account, please log in:</strong>
+										</p>
+										<form role="form" action="/">
+
+											<div class="form-group">
+												<label for="login_email" class="sr-only">Email address</label>
+												<input type="email" class="form-control" id="login_email" placeholder="Email Address">
+											</div>
+											<div class="form-group">
+												<label for="login_password" class="sr-only">Password</label>
+												<input type="password" class="form-control" id="login_password" placeholder="Password">
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" id="remember_checkbox">
+												<label for="remember_checkbox">
+													Remember Me
+												</label>
+											</div>
+
+											<button type="button" class="theme_button color1 block_button">
+												Log in
+											</button>
+
+										</form>
+										<div class="topmargin_20 darklinks">
+											<a href="#">Forgot Your Password?</a>
+										</div>
+
+									</div>
+								</li>
+
+
+								<a class="header-button" href="#">
+									<i class="fa fa-lock"></i>
+									<span class="header-button-text">Register</span>
+								</a>
+							</ul>
+
+						</div>
+
+						<div class="col-md-6 text-center divided_content">
+
+							<div>
+								<div class="media small-teaser">
+									<div class="media-left">
+										<i class="fa fa-user highlight fontsize_16"></i>
+									</div>
+									<div class="media-body">
+										0 (800) 337 25 25
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="media small-teaser">
+									<div class="media-left">
+										<i class="fa fa-map-marker highlight fontsize_16"></i>
+									</div>
+									<div class="media-body">
+										350 Leverton Cove Road Springfield, MA
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="media small-teaser">
+									<div class="media-left">
+										<i class="fa fa-envelope highlight fontsize_16"></i>
+									</div>
+									<div class="media-body">
+										<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82f1f7f2f2edf0f6c2f2f1fbe1eaedeeede5ebf1f6ace1edef">[email&#160;protected]</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3 text-center text-md-right bottommargin_0">
+							<a href="#appointment" class="theme_button color1 margin_0">Make an appointment</a>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<header class="page_header header_white table_section columns_padding_0 toggler-xs-right">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 col-sm-5">
+							<a href="./" class="logo">
+								Psychologist
+							</a>
+							<!-- header toggler -->
+							<span class="toggle_menu visible-xs">
+								<span></span>
+							</span>
+						</div>
+						<div class="col-md-6 col-sm-2 text-center">
+							<!-- main nav start -->
+							<nav class="mainmenu_wrapper">
+								<ul class="mainmenu nav sf-menu">
+									<li class="active">
+										<a href="{% url 'homepage' %}">Главная</a>
+									</li>
+
+									<!-- blog -->
+									<li>
+										<a href="{% url 'blog_list' %}">Блоги</a>
+									</li>
+									<!-- eof blog -->
+
+									<!-- blog -->
+									<li>
+										<a href="{% url 'list_psycholog' %}">Психологи</a>
+									</li>
+									<!-- eof blog -->
+								</ul>
+							</nav>
+							<!-- eof main nav -->
+							<span class="toggle_menu hidden-xs">
+								<span></span>
+							</span>
+						</div>
+						<div class="col-md-3 col-sm-5 text-right hidden-xs lightgreylinks">
+							<div class="page_social_icons divided_content">
+								<span>
+									<a class="social-icon soc-facebook" href="#" title="Facebook"></a>
+								</span>
+								<span>
+									<a class="social-icon soc-twitter" href="#" title="Twitter"></a>
+								</span>
+								<span>
+									<a class="social-icon soc-google" href="#" title="Google"></a>
+								</span>
+								<span>
+									<a class="social-icon soc-linkedin" href="#" title="LinkedIn"></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<section class="intro_section page_mainslider ds">
+				<div class="flexslider">
+					<ul class="slides">
+						https://html.modernwebtemplates.com/psychologist/fonts/fontawesome-webfont.ttf?v=4.6.3
+						http://127.0.0.1:8000/static/
+						<li>
+							<img src="{% static 'images/slide01.jpg' %}" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-12 text-center">
+										<div class="slide_description_wrapper">
+											<div class="slide_description">
+												<div class="intro-layer" data-animation="fadeInRight">
+													<h3>
+														Rita Solomou
+													</h3>
+												</div>
+												<div class="intro-layer" data-animation="fadeInLeft">
+													<p class="small-text grey">
+														Premium HTML Template
+													</p>
+												</div>
+											</div>
+											<!-- eof .slide_description -->
+										</div>
+										<!-- eof .slide_description_wrapper -->
+									</div>
+									<!-- eof .col-* -->
+								</div>
+								<!-- eof .row -->
+							</div>
+							<!-- eof .container -->
+						</li>
+
+						<li>
+							<img src="{% static 'images/slide01.jpg' %}" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-12 text-center">
+										<div class="slide_description_wrapper">
+											<div class="slide_description">
+												<div class="intro-layer" data-animation="fadeInRight">
+													<h3>
+														Rita Solomou
+													</h3>
+												</div>
+												<div class="intro-layer" data-animation="fadeInLeft">
+													<p class="small-text grey">
+														Premium HTML Template
+													</p>
+												</div>
+											</div>
+											<!-- eof .slide_description -->
+										</div>
+										<!-- eof .slide_description_wrapper -->
+									</div>
+									<!-- eof .col-* -->
+								</div>
+								<!-- eof .row -->
+							</div>
+							<!-- eof .container -->
+						</li>
+
+					</ul>
+				</div>
+				<!-- eof flexslider -->
+			</section>
+
+			<section class="ls section_padding_top_130 section_padding_bottom_100">
+                <div class="container">
+            
+                    <div class="row columns_padding_25">
+            
+                        <div class="col-sm-7 col-md-8 col-lg-8">
+            
+            
+                            <article class="vertical-item content-padding post format-gallery with_shadow">
+            
+                                <div class="entry-thumbnail ds">
+                                    <div class="owl-carousel owl-loaded owl-drag entry-thumbnail-carousel" data-loop="true" data-margin="0" data-nav="false" data-dots="true" data-themeclass="entry-thumbnail-carousel" data-center="false" data-items="1" data-autoplay="true" data-responsive-xs="1" data-responsive-sm="1" data-responsive-md="1" data-responsive-lg="1">
+                                        
+                                        
+                                        
+                                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2440px, 0px, 0px); transition: all 0.25s ease 0s; width: 4270px;"><div class="owl-item cloned" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/03.jpg" alt="image">
+                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/04.jpg" alt="image">
+                                        </div></div><div class="owl-item" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/12.jpg" alt="image">
+                                        </div></div><div class="owl-item" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/03.jpg" alt="image">
+                                        </div></div><div class="owl-item active" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/04.jpg" alt="image">
+                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/12.jpg" alt="image">
+                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
+                                            <img src="images/gallery/03.jpg" alt="image">
+                                        </div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots"><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div></div></div>
+            
+                                </div>
+            
+            
+                                <div class="item-content entry-content">
+                                    <header class="entry-header">
+            
+                                        <div class="entry-date small-text highlight">
+                                            <a href="blog-right.html" rel="bookmark">
+                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                                    March 13, 2017
+                                                </time>
+                                            </a>
+                                        </div>
+            
+                                        <h4 class="entry-title">
+                                            <a href="blog-single-right.html" rel="bookmark">Post With Carousel</a>
+                                        </h4>
+            
+                                        <hr class="divider_30_1">
+            
+                                        <!-- .entry-meta -->
+            
+                                    </header>
+                                    <!-- .entry-header -->
+            
+                                    <p>Duis autem eumre dolor hendrerit vulputate veliesse molestie consequat vel illum dolore at vero eros et accumsan et iusto odio dignissim.</p>
+                                    <p>Qui blandit praesent luptatum zzril delenit augue duis dolore feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam erat volutpat.</p>
+            
+            
+                                </div>
+                                <!-- .item-content.entry-content -->
+                            </article>
+                            <!-- .post -->
+            
+            
+                            <article class="vertical-item content-padding post format-video with_shadow">
+            
+            
+                                <div class="entry-thumbnail">
+                                    <div class="embed-responsive embed-responsive-3by2">
+                                        <a href="//player.vimeo.com/video/1084537" class="embed-placeholder">
+                                            <img src="images/gallery/02.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <!-- <iframe src="//player.vimeo.com/video/1084537" width="1000" height="460"></iframe> -->
+                                </div>
+            
+                                <div class="item-content entry-content">
+                                    <header class="entry-header">
+            
+                                        <div class="entry-date small-text highlight">
+                                            <a href="blog-right.html" rel="bookmark">
+                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                                    March 13, 2017
+                                                </time>
+                                            </a>
+                                        </div>
+            
+                                        <h4 class="entry-title">
+                                            <a href="blog-single-video-right.html" rel="bookmark">Post With Vimeo Video</a>
+                                        </h4>
+            
+                                        <hr class="divider_30_1">
+            
+                                        <!-- .entry-meta -->
+            
+                                    </header>
+                                    <!-- .entry-header -->
+            
+                                    <p>Duis autem eumre dolor hendrerit vulputate veliesse molestie consequat vel illum dolore at vero eros et accumsan et iusto odio dignissim.</p>
+                                    <p>Qui blandit praesent luptatum zzril delenit augue duis dolore feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam erat volutpat.</p>
+            
+            
+                                </div>
+                                <!-- .item-content.entry-content -->
+                            </article>
+                            
+                            <div class="row topmargin_30">
+                                <div class="col-sm-12 text-center">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#">
+                                                <span class="sr-only">Prev</span>
+                                                <i class="fa  fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="sr-only">Next</span>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+            
+                        </div>
+                        <!--eof .col-sm-8 (main content)-->
+            
+                        <!-- sidebar -->
+                        <aside class="col-sm-5 col-md-4 col-lg-4">
+            
+            
+                            <div class="widget widget_apsc_widget">
+                                <h3 class="widget-title">Get In Touch</h3>
+                                <div class="apsc-icons-wrapper clearfix apsc-theme-4">
+                                    <div class="apsc-each-profile">
+                                        <a class="apsc-facebook-icon clearfix" href="#">
+                                            <div class="apsc-inner-block">
+                                                <span class="social-icon">
+                                                    <i class="fa fa-facebook apsc-facebook"></i>
+                                                    <span class="media-name">Facebook</span>
+                                                </span>
+                                                <span class="apsc-count">9.8K</span>
+                                                <span class="apsc-media-type">Fans</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="apsc-each-profile">
+                                        <a class="apsc-twitter-icon clearfix" href="#">
+                                            <div class="apsc-inner-block">
+                                                <span class="social-icon">
+                                                    <i class="fa fa-twitter apsc-twitter"></i>
+                                                    <span class="media-name">Twitter</span>
+                                                </span>
+                                                <span class="apsc-count">4.9K</span>
+                                                <span class="apsc-media-type">Followers</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="apsc-each-profile">
+                                        <a class="apsc-google-plus-icon clearfix" href="#">
+                                            <div class="apsc-inner-block">
+                                                <span class="social-icon">
+                                                    <i class="apsc-googlePlus fa fa-google-plus"></i>
+                                                    <span class="media-name">google+</span>
+                                                </span>
+                                                <span class="apsc-count">10.1M</span>
+                                                <span class="apsc-media-type">Followers</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="apsc-each-profile">
+                                        <a class="apsc-instagram-icon clearfix" href="#">
+                                            <div class="apsc-inner-block">
+                                                <span class="social-icon">
+                                                    <i class="apsc-instagram fa fa-instagram"></i>
+                                                    <span class="media-name">Instagram</span>
+                                                </span>
+                                                <span class="apsc-count">4</span>
+                                                <span class="apsc-media-type">Followers</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="apsc-each-profile">
+                                        <a class="apsc-youtube-icon clearfix" href="#">
+                                            <div class="apsc-inner-block">
+                                                <span class="social-icon">
+                                                    <i class="apsc-youtube fa fa-youtube"></i>
+                                                    <span class="media-name">Youtube</span>
+                                                </span>
+                                                <span class="apsc-count">2.2K</span>
+                                                <span class="apsc-media-type">Subscriber</span>
+                                            </div>
+                                        </a>
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+            
+                            <div class="widget widget_mailchimp">
+            
+                                <h3 class="widget-title">Newsletter</h3>
+            
+                                <form class="signup form-inline" action="./" method="get">
+                                    <div class="form-group">
+                                        <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                                    </div>
+                                    <button type="submit" class="theme_button">Send</button>
+                                    <div class="response"></div>
+                                </form>
+            
+                                <p class="topmargin_20">Stay updated with our latest news and updates.</p>
+            
+                            </div>
+            
+            
+                            <div class="widget widget_flickr">
+            
+                                <h3 class="widget-title">Flickr Widget</h3>
+                                <ul id="flickr" class="flickr_loaded"></ul>
+                            </div>
+            
+                            <div class="widget widget_categories">
+            
+                                <h3 class="widget-title">Categories</h3>
+                                <form class="contact-form" method="post" action="./">
+            
+                                    <div class="select-group">
+                                        <label for="categories" class="sr-only">Select Category
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <select aria-required="true" id="categories" name="categories" class="choice empty form-control">
+                                                <option value="" disabled="" selected="" data-default="">Select Category</option>
+                                                <option value="category1">Category 1</option>
+                                                <option value="category2">Category 2</option>
+                                                <option value="category3">Category 3</option>
+                                                <option value="category4">Category 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+            
+                                </form>
+                            </div>
+            
+            
+                            <div class="widget widget_recent_posts">
+            
+                                <h3 class="widget-title">Recent Posts</h3>
+                                <ul>
+                                    <li>
+                                        <div class="entry-date small-text highlight">
+                                            <a href="blog-right.html" rel="bookmark">
+                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                                    March 13, 2017
+                                                </time>
+                                            </a>
+                                        </div>
+                                        <h4>
+                                            <a href="blog-single-right.html">Doner tongue bacon beef ribs picanha sausage brisket t-bone</a>
+                                        </h4>
+                                    </li>
+                                    <li>
+                                        <div class="entry-date small-text highlight">
+                                            <a href="blog-right.html" rel="bookmark">
+                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                                    March 11, 2017
+                                                </time>
+                                            </a>
+                                        </div>
+                                        <h4>
+                                            <a href="blog-single-right.html">Doner tongue bacon beef ribs picanha sausage brisket t-bone</a>
+                                        </h4>
+                                    </li>
+                                    <li>
+                                        <div class="entry-date small-text highlight">
+                                            <a href="blog-right.html" rel="bookmark">
+                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                                    March 11, 2017
+                                                </time>
+                                            </a>
+                                        </div>
+                                        <h4>
+                                            <a href="blog-single-right.html">Doner tongue bacon beef ribs picanha sausage brisket t-bone</a>
+                                        </h4>
+                                    </li>
+                                </ul>
+                            </div>
+            
+            
+                            <div class="widget widget_archive">
+            
+                                <h3 class="widget-title">Archives</h3>
+                                <form class="contact-form" method="post" action="./">
+            
+                                    <div class="select-group">
+                                        <label for="archive" class="sr-only">Select mounth
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <select aria-required="true" id="archive" name="archive" class="choice empty form-control">
+                                                <option value="" disabled="" selected="" data-default="">Select mounth</option>
+                                                <option value="jan">January</option>
+                                                <option value="feb">February</option>
+                                                <option value="mar">March</option>
+                                                <option value="apr">April</option>
+                                                <option value="may">May</option>
+                                                <option value="jun">June</option>
+                                                <option value="jul">July</option>
+                                                <option value="aug">August</option>
+                                                <option value="sep">September</option>
+                                                <option value="oct">October</option>
+                                                <option value="nov">November</option>
+                                                <option value="dec">December</option>
+                                            </select>
+                                        </div>
+                                    </div>
+            
+                                </form>
+                            </div>
+            
+            
+                        </aside>
+                        <!-- eof aside sidebar -->
+            
+                    </div>
+                </div>
+            </section>
+
+			<footer class="page_footer cs main_color2 table_section section_padding_50 columns_padding_0">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-sm-4 col-sm-push-4 text-center">
+							<a href="./" class="logo big text-shadow">
+								Psychologist
+								<span class="small-text">Premium HTML Template</span>
+							</a>
+						</div>
+
+						<div class="col-sm-4 col-sm-pull-4 text-center text-sm-left text-md-left">
+							<div class="widget widget_nav_menu greylinks">
+
+								<ul class="menu divided_content wide_divider">
+									<li class="">
+										<a href="./">Home</a>
+									</li>
+									<li class="">
+										<a href="about.html">About</a>
+									</li>
+									<li class="">
+										<a href="services.html">Services</a>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+						<div class="col-sm-4 text-center text-sm-right text-md-right">
+							<div class="widget widget_nav_menu greylinks">
+
+								<ul class="menu divided_content wide_divider">
+									<li class="">
+										<a href="gallery-regular-3-cols.html">Gallery</a>
+									</li>
+									<li class="">
+										<a href="blog-right.html">Blog</a>
+									</li>
+									<li class="">
+										<a href="contact.html">Contacts</a>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</footer>
+
+			<section class="cs main_color2 page_copyright section_padding_15">
+				<div class="container with_top_border">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<p class="small-text">&copy; 2017 Psychology and Counseling. All Rights Reserved</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	{% comment %} <script src="{% static 'js/switcher.js' %}"></script> {% endcomment %}
+
+</body>
+
+</html>
+

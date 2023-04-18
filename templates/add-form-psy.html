@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 1rem;
+      }
+      select {
+        height: 2.5rem;
+      }
+      textarea {
+        width: 100%;
+        height: 10rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 1rem;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .required:after {
+        content: "*";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+      <h2 style="display: flex; justify-content: center; font-size: 30px; padding-bottom: 50px; padding-top: 50px;">Заполнение Данных</h2>
+      <form action="{% url 'compl_form' %}" method="post" style="display: flex; justify-content: center;">
+        {% csrf_token %}
+        <div class="forms" style="width: 35%; padding-bottom: 100px;">
+            <label for="surname" name="surname" class="required">Фамилия:</label>
+            <input for="surname" type="text" id="surname" name="surname" required>
+
+            <label for="name" class="required" name="name">Имя:</label>
+            <input for="name" type="text" id="name" name="name" required>
+
+            <label for="country" class="required" name="country">Город:</label>
+            <input for="country" type="text" id="country" name="country" required>
+
+            <label for="sex" class="required" name="sex">Пол:</label>
+            <select for="sex" id="sex" name="sex" required>
+                <option value="">Выберите пол</option>
+                <option value="Мужской">Мужской</option>
+                <option value="Женский">Женский</option>
+                <option value="Другой">Другой</option>
+            </select>
+
+            <label for="brief_description_work" class="required" name="brief_description_work">Краткое описание работы:</label>
+            <textarea for="brief_description_work" id="brief_description_work" name="brief_description_work" required></textarea>
+
+            <label for="bio" name="bio">О себе:</label>
+            <textarea for="bio" id="bio" name="bio"></textarea>
+
+            <label for="education" name="education">Образование:</label>
+            <textarea for="education" id="education" name="education"></textarea>
+
+            <label for="status" name="status" class="required">Ваш статус:</label>
+            <select for="status" id="status" name="status" required>
+                <option value="">Выберите статус*</option>
+                <option value="student">Студент</option>
+                <option value="employed">Работаю</option>
+                <option value="unemployed">Не работаю</option>
+            </select>
+
+            <label for="main_specialization" class="required" name="main_specialization">Основная специализация:</label>
+            <!-- <input type="text" id="main-specialization" name="main-specialization" required> -->
+            <select for="main_specialization" id="main_specialization" name="main_specialization" required>
+                <option value="">Выберите специализацию*</option>
+                <!-- <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+                <option value="other">Другой</option> -->
+                <option value="Арт-терапия">Арт-терапия</option>
+                <option value="Гештальт-терапия">Гештальт-терапия</option>
+                <option value="Гипнотерапия">Гипнотерапия</option>
+            </select>
+
+            <label for="additional_specialization_one" name="additional_specialization_one">Дополнительная специализация:</label>
+            <input for="additional_specialization_one" type="text" id="additional_specialization_one" name="additional_specialization_one">
+            
+            <label for="online_consultation" name="online_consultation" class="required">Онлайн консультация:</label>
+            <select for="online_consultation" id="online_consultation" name="online_consultation" required>
+                <option value="">Выберите вариант</option>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+            </select>
+            
+            <label for="cost_of_online_consultation" name="cost_of_online_consultation">Стоимость онлайн консультации:</label>
+            <input for="cost_of_online_consultation" type="text" id="cost_of_online_consultation" name="cost_of_online_consultation">
+            
+            <label for="personal_reception" class="required" name="personal_reception">Личный прием:</label>
+            <select for="personal_reception" id="personal_reception" name="personal_reception" required>
+                <option value="">Выберите вариант</option>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+            </select>
+            
+            <label for="cost_of_personal_reception" name="cost_of_personal_reception">Стоимость личного приема:</label>
+            <input for="cost_of_personal_reception" type="text" id="cost_of_personal_reception" name="cost_of_personal_reception">
+            
+            <label for="address_of_the_reception_room" name="address_of_the_reception_room">Адрес кабинета приема:</label>
+            <input for="address_of_the_reception_room" type="text" id="address_of_the_reception_room" name="address_of_the_reception_room">
+            
+            <label for="phone" class="required" name="phone">Телефон:</label>
+            <input for="phone" type="text" id="phone" name="phone" required>
+            
+            <label for="skype" name="skype">Skype:</label>
+            <input for="skype" type="text" id="skype" name="skype">
+            
+            <label for="instagram" name="instagram">Instagram:</label>
+            <input for="instagram" type="text" id="instagram" name="instagram">
+            
+            <label for="facebook" name="facebook">Facebook:</label>
+            <input for="facebook" type="text" id="facebook" name="facebook">
+            
+            <label for="twitter" name="twitter">Twitter:</label>
+            <input for="twitter" type="text" id="twitter" name="twitter">
+            
+            <input type="submit">
+        </div>
+    </form>
+      
+
+</body>
+</html>

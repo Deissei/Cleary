@@ -39,12 +39,12 @@ class Psychologist(models.Model):
     image = models.ImageField(upload_to='psychologist')
     
     SEX_CHOICES = [
-        ("М", "Мужской" ),
-        ("Ж", "Женский" ),
+        ("Мужской", "Мужской" ),
+        ("Женский", "Женский" ),
     ]
     online_consultation_CHOICES = [
-        ('Д', 'Да'),
-        ('Н', 'Нет'),
+        ('Да', 'Да'),
+        ('Нет', 'Нет'),
     ]
     surname = models.CharField(max_length=30)
     name = models.CharField(max_length=30)
@@ -54,10 +54,10 @@ class Psychologist(models.Model):
     bio = models.TextField()
     education = models.TextField()
 
-    status = models.ForeignKey(PsychologistStatus, on_delete=models.SET_DEFAULT, default='None')
-    main_specialization = models.ForeignKey(MainSpecialization, on_delete=models.SET_DEFAULT, default='None')
+    status = models.CharField(max_length=200)
+    main_specialization = models.CharField(max_length=200)
     
-    additional_specialization_one = models.ForeignKey(AdditionalSpecialization, on_delete=models.SET_DEFAULT, default='None', null=True, blank=True)
+    additional_specialization_one = models.CharField(max_length=200)
     # additional_specialization_two = models.ForeignKey(AdditionalSpecialization, on_delete=models.SET_DEFAULT, default='None', null=True, blank=True)
     # additional_specialization_three = models.ForeignKey(AdditionalSpecialization, on_delete=models.SET_DEFAULT, default='None', null=True, blank=True)
 
@@ -76,7 +76,7 @@ class Psychologist(models.Model):
     facebook = models.CharField(max_length=100, null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True)
 
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
 
     def __str__(self):
         return f"{self.surname}-{self.name}"
