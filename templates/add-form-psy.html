@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Форма</title>
+    <title>Форма для психолога</title>
     <style>
       * {
         box-sizing: border-box;
@@ -49,8 +49,9 @@
         background-color: #3e8e41;
       }
       .required:after {
-        content: "*";
+        content: "*обязательные поля";
         color: red;
+        font-size: 12px;
       }
     </style>
   </head>
@@ -64,6 +65,9 @@
 
             <label for="name" class="required" name="name">Имя:</label>
             <input for="name" type="text" id="name" name="name" required>
+
+            <label for="email" class="required" name="email">Почта:</label>
+            <input for="email" type="text" id="email" name="email" placeholder="extends@gmail.com">
 
             <label for="country" class="required" name="country">Город:</label>
             <input for="country" type="text" id="country" name="country" required>

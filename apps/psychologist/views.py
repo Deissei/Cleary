@@ -2,11 +2,15 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.views.generic import DetailView, ListView, CreateView
 
+
 from apps.psychologist.models import Psychologist
 from apps.psychologist.forms import PsychologistForm
 
 from .blogs import Blog
 from django.urls import reverse_lazy
+
+from .send_mess import send_email
+
 
 class PsychologistListView(ListView):
     model = Psychologist
@@ -47,6 +51,7 @@ def CreateViewFunction(reqeust):
         brief_description_work = reqeust.POST['brief_description_work']
         bio = reqeust.POST['bio']
         education = reqeust.POST['education']
+        email = reqeust.POST['email']
         status = reqeust.POST['status']
         main_specialization = reqeust.POST['main_specialization']
         additional_specialization_one = reqeust.POST['additional_specialization_one']
@@ -61,7 +66,7 @@ def CreateViewFunction(reqeust):
         twitter = reqeust.POST['twitter']
 
         Psychologist.objects.create(surname=surname, name=name, country=country, sex=sex, brief_description_work=brief_description_work,
-                                    bio=bio, education=education, status=status, main_specialization=main_specialization, 
+                                    bio=bio, education=education, email=email, status=status, main_specialization=main_specialization, 
                                     additional_specialization_one=additional_specialization_one,
                                     online_consultation=online_consultation,
                                     cost_of_online_consultation=cost_of_online_consultation,
@@ -72,6 +77,9 @@ def CreateViewFunction(reqeust):
                                     instagram=instagram,
                                     facebook=facebook,
                                     twitter=twitter)
+        print("[!]SENDING MESSAGE")
+        send_email(f"{name} Заполнил форму!", f"Здравье желаю мой повелитель!\nТУТ какойто чел отправил форму, говорит что сильный психолог!\nВот его данные:\nИмя: {name}\nФамилия: {surname}\nЕмаил: {email}\n\nПолностью можете посмотреть переходя по ссылке\n\nhttp://127.0.0.1:8000/admin/psychologist/psychologist/")
+        print("[!]SEND MESSAGE")
         return redirect('finish_form')
 
 

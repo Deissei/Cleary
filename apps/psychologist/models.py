@@ -51,8 +51,9 @@ class Psychologist(models.Model):
     country = models.CharField(max_length=50)
     sex = models.CharField(max_length=7, choices=SEX_CHOICES)
     brief_description_work = models.CharField(max_length=500)
-    bio = models.TextField()
-    education = models.TextField()
+    bio = models.TextField(null=True, blank=True)
+    education = models.TextField(null=True, blank=True)
+    email = models.EmailField(unique=True, null=True, blank=True)
 
     status = models.CharField(max_length=200)
     main_specialization = models.CharField(max_length=200)
