@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-from .models import Psychologist
+from apps.psychologist.models import Psychologist
 
 class Blog(models.Model):
     author = models.ForeignKey(Psychologist, on_delete=models.CASCADE, related_name="blog_author")

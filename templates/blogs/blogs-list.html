@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block blog %}active{% endblock blog %}
+
+{% block content %}
+
+	{% include "homepage/blocks/intro.html" %}
+
+	{% include "blogs/blocks/block-list-blog.html" %}
+		
+{% endblock content %}

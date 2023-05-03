@@ -1,0 +1,138 @@
+<section id="appointment" class="ls section_padding_top_130 section_padding_bottom_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                <h2 class="section_header with_icon highlight">Записаться на прием</h2>
+                <div class="fontsize_16">
+                    Я хочу разминаться с короткими ребрышками коровы в солонине, как Кевин. Футбольные сосиски с ветчиной ветчины винят в этом сам жир
+                </div>
+
+                <form class="contact-form row columns_margin_bottom_40 topmargin_60" method="" action="">
+                    {% csrf_token %}
+
+                    <div class="col-sm-6">
+                        <div class="contact-form-name">
+                            <label for="name" name="name">Your Name
+                                <span class="required">*</span>
+                            </label>
+                            <input for="name" type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-email">
+                            <label for="email" name="email">Email Address
+                                <span class="required">*</span>
+                            </label>
+                            <input for="email" type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-subject">
+                            <label for="subject" name="subject">Subject
+                                <span class="required">*</span>
+                            </label>
+                            <input for="subject" type="text" aria-required="true" size="30" value="" name="subject" id="subject" class="form-control" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-phone">
+                            <label for="phone" name="phone">Phone
+                                <span class="required">*</span>
+                            </label>
+                            <input for="phone" type="text" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-date select-group">
+                            <label for="date" name="date" class="sr-only">Date
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <select for="date" aria-required="true" id="date" name="date" class="choice form-control">
+                                    <option value="" disabled="" selected="" data-default="">Date</option>
+                                    <option value="2022-03-24">2022-03-24</option>
+                                    <option value="2022-03-25">2022-03-25</option>
+                                    <option value="2022-03-26">2022-03-26</option>
+                                    <option value="2022-03-27">2022-03-27</option>
+                                    <option value="2022-03-28">2022-03-28</option>
+                                    <option value="2022-03-29">2022-03-29</option>
+                                    <option value="2022-03-30">2022-03-30</option>
+                                    <option value="2022-03-31">2022-03-31</option>
+                                    <option value="2022-04-01">2022-04-01</option>
+                                    <option value="2022-03-02">2022-03-02</option>
+                                    <option value="2022-03-03">2022-03-03</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-time select-group">
+                            <label for="time" name="time" class="sr-only">Date
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <select for="time" aria-required="true" id="time" name="time" class="choice empty form-control">
+                                    <option value="" disabled="" selected="" data-default="">Time</option>
+                                    <option value="9:00:00">9:00</option>
+                                    <option value="10:00:00">10:00</option>
+                                    <option value="11:00:00">11:00</option>
+                                    <option value="12:00:00">12:00</option>
+                                    <option value="13:00:00">13:00</option>
+                                    <option value="14:00:00">14:00</option>
+                                    <option value="15:00:00">15:00</option>
+                                    <option value="16:00:00">16:00</option>
+                                    <option value="17:00:00">17:00</option>
+                                    <option value="18:00:00">18:00</option>
+                                    <option value="19:00:00">19:00</option>
+                                    <option value="20:00:00">20:00</option>
+                                    <option value="21:00:00">21:00</option>
+                                    <option value="22:00:00">22:00</option>
+                                    <option value="23:00:00">23:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-6">
+                        <div class="contact-form-date select-group">
+                            <label for="date" name="date" class="sr-only">Date
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <label for="date" name="date">Phone
+                                    <span class="required">*</span>
+                                </label>
+                                <input for="date" type="text" aria-required="true" size="30" value="" name="date" id="date" class="form-control" placeholder="Date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-form-time select-group">
+                            <label for="time" name="time" class="sr-only">Date
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <label for="time" name="time">Phone
+                                    <span class="required">*</span>
+                                </label>
+                                <input for="time" type="text" aria-required="true" size="30" value="" name="time" id="time" class="form-control" placeholder="Time">
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-12">
+                        <div class="contact-form-message">
+                            <label for="message" name="message">Message</label>
+                            <textarea for="message" aria-required="true" rows="1" cols="45" name="message" id="message" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="contact-form-submit topmargin_20">
+                            <button type="submit" id="contact_form_submit" class="theme_button color1 with_shadow">Send message</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,3 +1,5 @@
+from typing import Any, Dict
+from django.db import models
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.views.generic import DetailView, ListView, CreateView
@@ -15,19 +17,19 @@ from .send_mess import send_email
 class PsychologistListView(ListView):
     model = Psychologist
     queryset = model.objects.filter(active=True)
-    template_name = "list_psychologist.html"
+    template_name = "psychologist/list_psychologist.html"
 
 
 class PsychologistDetailView(DetailView):
     model = Psychologist
     slug_field = 'slug'
-    template_name = 'detail_psychologist.html'
+    template_name = 'psychologist/psycholog-detail.html'
 
 
 class HomePage(View):
     def get(self, request):
         psychologists = Psychologist.objects.filter(active=True)
-        return render(request, 'index.html', locals())
+        return render(request, 'homepage/index.html', locals())
 
 
 
@@ -35,13 +37,17 @@ class HomePage(View):
 class BlogListView(ListView):
     model = Blog
     queryset = model.objects.all()
-    template_name = "blogs-list.html"
+    template_name = "blogs/blogs-list.html"
 
 
 class BlogDetailView(DetailView):
     model = Blog
     slug_field = 'slug'
-    template_name = "blog-single-right.html"
+    template_name = "blogs/blog-detail.html"
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['']
 
 def CreateViewFunction(reqeust):
     if reqeust.method == "POST":
@@ -85,9 +91,9 @@ def CreateViewFunction(reqeust):
 
 
 def ViewFormFunction(request):
-    return render(request, 'add-form-psy.html', locals())
+    return render(request, 'forms/add-form-psy.html', locals())
 
 
 def FinishViewForm(request):
-    return render(request, 'finish_form.html', locals())
+    return render(request, 'forms/finish_form.html', locals())
 

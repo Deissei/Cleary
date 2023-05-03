@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block homepage %}active{% endblock homepage %}
+
+{% block content %}
+
+	{% include "homepage/blocks/intro.html" %}
+
+	{% include "homepage/blocks/psychologists.html" %}
+
+	{% include "homepage/blocks/makeIn.html" %}
+		
+{% endblock content %}
+	

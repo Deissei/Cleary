@@ -1,0 +1,51 @@
+<section class="ls section_padding_top_130 section_padding_bottom_100 columns_margin_top_0 columns_margin_bottom_30">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section_header with_icon">Психологии</h2>
+                <p>
+                    Я хочу разминаться с короткими ребрышками коровы в солонине, как Кевин. Футбольные сосиски с ветчиной рулькой винят в откорме сама по себе вяленая вырезка какая-то.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {% for pl in psychologists %}
+            <div class="col-md-4 text-center">
+                <article class="vertical-item content-padding post format-standard with_shadow">
+
+                    <div class="item-media entry-thumbnail">
+                        <img src="{{ pl.image.url }}" alt="">
+                    </div>
+
+                    <div class="item-content entry-content">
+                        <header class="entry-header">
+
+                            <div class="entry-date small-text highlight">
+                                <a href="blog-right.html" rel="bookmark">
+                                    <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+                                        {{ pl.main_specialization }}
+                                    </time>
+                                </a>
+                            </div>
+
+                            <h4 class="entry-title">
+                                <a href="{{ pl.get_absolute_url }}" rel="bookmark">{{ pl.name }} {{ pl.surname }}</a>
+                            </h4>
+
+                            <hr class="divider_30_1">
+
+                        </header>
+                        <!-- .entry-header -->
+
+                        <p class="bottommargin_40 fontsize_18">{{ pl.bio|truncatewords:11 }}</p>
+
+                        <a href="{{ pl.get_absolute_url }}" class="theme_button color1">Смотреть польностью</a>
+
+                    </div>
+                    <!-- .item-content.entry-content -->
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
