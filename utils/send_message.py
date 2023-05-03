@@ -29,6 +29,3 @@ def send_email(subject, text, from_addr='psychologistsite@yandex.ru', to_addr='k
         raise err
     finally:
         smtp.quit()
-        
-
-

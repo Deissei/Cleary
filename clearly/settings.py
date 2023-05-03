@@ -29,6 +29,8 @@ INSTALLED_APPS = [
 
     # apps
     'apps.psychologist',
+    'apps.blogs',
+    'apps.makeIN',
 ]
 
 MIDDLEWARE = [
