@@ -82,54 +82,6 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-3 text-center text-md-left">
-							<ul class="inline-dropdown inline-block divided_content">
-
-								<li class="dropdown login-dropdown">
-									<a class="header-button" data-target="#" href="./" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-										<i class="fa fa-user"></i>
-										<span class="header-button-text">Login</span>
-									</a>
-
-									<div class="dropdown-menu ls with_padding">
-
-										<p>
-											<strong class="grey">If you have an account, please log in:</strong>
-										</p>
-										<form role="form" action="/">
-
-											<div class="form-group">
-												<label for="login_email" class="sr-only">Email address</label>
-												<input type="email" class="form-control" id="login_email" placeholder="Email Address">
-											</div>
-											<div class="form-group">
-												<label for="login_password" class="sr-only">Password</label>
-												<input type="password" class="form-control" id="login_password" placeholder="Password">
-											</div>
-											<div class="checkbox">
-												<input type="checkbox" id="remember_checkbox">
-												<label for="remember_checkbox">
-													Remember Me
-												</label>
-											</div>
-
-											<button type="button" class="theme_button color1 block_button">
-												Log in
-											</button>
-
-										</form>
-										<div class="topmargin_20 darklinks">
-											<a href="#">Forgot Your Password?</a>
-										</div>
-
-									</div>
-								</li>
-
-
-								<a class="header-button" href="#">
-									<i class="fa fa-lock"></i>
-									<span class="header-button-text">Register</span>
-								</a>
-							</ul>
 
 						</div>
 
@@ -163,7 +115,7 @@
 										<i class="fa fa-envelope highlight fontsize_16"></i>
 									</div>
 									<div class="media-body">
-										<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82f1f7f2f2edf0f6c2f2f1fbe1eaedeeede5ebf1f6ace1edef">[email&#160;protected]</a>
+										<a class="__cf_email__" data-cfemail="82f1f7f2f2edf0f6c2f2f1fbe1eaedeeede5ebf1f6ace1edef">psychologist@gmail.com</a>
 									</div>
 								</div>
 							</div>
@@ -171,7 +123,7 @@
 						</div>
 
 						<div class="col-md-3 text-center text-md-right bottommargin_0">
-							<a href="#appointment" class="theme_button color1 margin_0">Make an appointment</a>
+							<a href="{% url 'view_form_function' %}" class="theme_button color1 margin_0">Форма для Психолога</a>
 						</div>
 
 					</div>
@@ -182,7 +134,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-3 col-sm-5">
-							<a href="./" class="logo">
+							<a href="{% url 'homepage' %}" class="logo">
 								Psychologist
 							</a>
 							<!-- header toggler -->
@@ -311,73 +263,14 @@
             
                         <div class="col-sm-7 col-md-8 col-lg-8">
             
-            
-                            <article class="vertical-item content-padding post format-gallery with_shadow">
-            
-                                <div class="entry-thumbnail ds">
-                                    <div class="owl-carousel owl-loaded owl-drag entry-thumbnail-carousel" data-loop="true" data-margin="0" data-nav="false" data-dots="true" data-themeclass="entry-thumbnail-carousel" data-center="false" data-items="1" data-autoplay="true" data-responsive-xs="1" data-responsive-sm="1" data-responsive-md="1" data-responsive-lg="1">
-                                        
-                                        
-                                        
-                                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2440px, 0px, 0px); transition: all 0.25s ease 0s; width: 4270px;"><div class="owl-item cloned" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/03.jpg" alt="image">
-                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/04.jpg" alt="image">
-                                        </div></div><div class="owl-item" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/12.jpg" alt="image">
-                                        </div></div><div class="owl-item" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/03.jpg" alt="image">
-                                        </div></div><div class="owl-item active" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/04.jpg" alt="image">
-                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/12.jpg" alt="image">
-                                        </div></div><div class="owl-item cloned" style="width: 610px;"><div class="item">
-                                            <img src="images/gallery/03.jpg" alt="image">
-                                        </div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots"><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div></div></div>
-            
-                                </div>
-            
-            
-                                <div class="item-content entry-content">
-                                    <header class="entry-header">
-            
-                                        <div class="entry-date small-text highlight">
-                                            <a href="blog-right.html" rel="bookmark">
-                                                <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
-                                                    March 13, 2017
-                                                </time>
-                                            </a>
-                                        </div>
-            
-                                        <h4 class="entry-title">
-                                            <a href="blog-single-right.html" rel="bookmark">Post With Carousel</a>
-                                        </h4>
-            
-                                        <hr class="divider_30_1">
-            
-                                        <!-- .entry-meta -->
-            
-                                    </header>
-                                    <!-- .entry-header -->
-            
-                                    <p>Duis autem eumre dolor hendrerit vulputate veliesse molestie consequat vel illum dolore at vero eros et accumsan et iusto odio dignissim.</p>
-                                    <p>Qui blandit praesent luptatum zzril delenit augue duis dolore feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam erat volutpat.</p>
-            
-            
-                                </div>
-                                <!-- .item-content.entry-content -->
-                            </article>
-                            <!-- .post -->
-            
-            
+							{% for blog in blog_list %}
                             <article class="vertical-item content-padding post format-video with_shadow">
             
             
                                 <div class="entry-thumbnail">
                                     <div class="embed-responsive embed-responsive-3by2">
-                                        <a href="//player.vimeo.com/video/1084537" class="embed-placeholder">
-                                            <img src="images/gallery/02.jpg" alt="">
-                                        </a>
+                                        <img src="{{ blog.image.url }}" alt="">
+
                                     </div>
                                     <!-- <iframe src="//player.vimeo.com/video/1084537" width="1000" height="460"></iframe> -->
                                 </div>
@@ -388,13 +281,13 @@
                                         <div class="entry-date small-text highlight">
                                             <a href="blog-right.html" rel="bookmark">
                                                 <time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
-                                                    March 13, 2017
+                                                    {{ blog.author }}
                                                 </time>
                                             </a>
                                         </div>
             
                                         <h4 class="entry-title">
-                                            <a href="blog-single-video-right.html" rel="bookmark">Post With Vimeo Video</a>
+                                            <a href="{{ blog.get_absolute_url }}" rel="bookmark">{{ blog.title }}</a>
                                         </h4>
             
                                         <hr class="divider_30_1">
@@ -404,48 +297,14 @@
                                     </header>
                                     <!-- .entry-header -->
             
-                                    <p>Duis autem eumre dolor hendrerit vulputate veliesse molestie consequat vel illum dolore at vero eros et accumsan et iusto odio dignissim.</p>
-                                    <p>Qui blandit praesent luptatum zzril delenit augue duis dolore feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam erat volutpat.</p>
+                                    <p>{{ blog.description|truncatewords:20	 }}</p>
             
             
                                 </div>
                                 <!-- .item-content.entry-content -->
                             </article>
-                            
-                            <div class="row topmargin_30">
-                                <div class="col-sm-12 text-center">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#">
-                                                <span class="sr-only">Prev</span>
-                                                <i class="fa  fa-angle-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="#">1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">4</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">5</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="sr-only">Next</span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-            
+                            {% endfor %}
+
                         </div>
                         <!--eof .col-sm-8 (main content)-->
             
@@ -658,7 +517,7 @@
 					<div class="row">
 
 						<div class="col-sm-4 col-sm-push-4 text-center">
-							<a href="./" class="logo big text-shadow">
+							<a href="{% url 'homepage' %}" class="logo big text-shadow">
 								Psychologist
 								<span class="small-text">Premium HTML Template</span>
 							</a>
@@ -669,31 +528,13 @@
 
 								<ul class="menu divided_content wide_divider">
 									<li class="">
-										<a href="./">Home</a>
+										<a href="{% url 'homepage' %}">Home</a>
 									</li>
 									<li class="">
-										<a href="about.html">About</a>
+										<a href="{% url 'blog_list' %}">Блоги</a>
 									</li>
 									<li class="">
-										<a href="services.html">Services</a>
-									</li>
-								</ul>
-
-							</div>
-						</div>
-
-						<div class="col-sm-4 text-center text-sm-right text-md-right">
-							<div class="widget widget_nav_menu greylinks">
-
-								<ul class="menu divided_content wide_divider">
-									<li class="">
-										<a href="gallery-regular-3-cols.html">Gallery</a>
-									</li>
-									<li class="">
-										<a href="blog-right.html">Blog</a>
-									</li>
-									<li class="">
-										<a href="contact.html">Contacts</a>
+										<a href="{% url 'list_psycholog' %}">Психологи</a>
 									</li>
 								</ul>
 
@@ -719,7 +560,7 @@
 	</div>
 	<!-- eof #canvas -->
 
-	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
 	<script src="{% static 'js/compressed.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
 	{% comment %} <script src="{% static 'js/switcher.js' %}"></script> {% endcomment %}

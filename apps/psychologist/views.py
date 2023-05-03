@@ -26,6 +26,7 @@ class PsychologistDetailView(DetailView):
 
 class HomePage(View):
     def get(self, request):
+        psychologists = Psychologist.objects.filter(active=True)
         return render(request, 'index.html', locals())
 
 
@@ -40,7 +41,7 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Blog
     slug_field = 'slug'
-    template_name = "detail-blog.html"
+    template_name = "blog-single-right.html"
 
 def CreateViewFunction(reqeust):
     if reqeust.method == "POST":
