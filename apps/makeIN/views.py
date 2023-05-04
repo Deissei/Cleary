@@ -8,6 +8,8 @@ from utils.send_message import send_email
 from apps.makeIN.forms import MakeAnAppointmentForm
 from apps.makeIN.models import MakeAnAppointment
 
+from apps.homepage.models import SettingsHomePage
+
 
 def CreateViewFunction(reqeust):
     if reqeust.method == "POST":
@@ -53,10 +55,12 @@ def CreateViewFunction(reqeust):
 
 
 def ViewFormFunction(request):
+    setting = SettingsHomePage.objects.get(id=1)
     return render(request, 'forms/add-form-psy.html', locals())
 
 
 def FinishViewForm(request):
+    setting = SettingsHomePage.objects.get(id=1)
     return render(request, 'forms/finish_form.html', locals())
 
 
@@ -74,3 +78,7 @@ class CreateMakeAnAppointmentFunction(CreateView):
     form_class = MakeAnAppointmentForm
     template_name = "homepage/index.html"
     success_url = reverse_lazy("homepage")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['setting'] = SettingsHomePage.objects.get(id=1)
