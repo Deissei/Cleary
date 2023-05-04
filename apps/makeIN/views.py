@@ -1,8 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+from django.views.generic import CreateView
+
+from django.urls import reverse_lazy
 
 from apps.psychologist.models import Psychologist
-
 from utils.send_message import send_email
+from apps.makeIN.forms import MakeAnAppointmentForm
+from apps.makeIN.models import MakeAnAppointment
 
 
 def CreateViewFunction(reqeust):
@@ -41,6 +45,7 @@ def CreateViewFunction(reqeust):
                                     instagram=instagram,
                                     facebook=facebook,
                                     twitter=twitter)
+        
         print("[!]SENDING MESSAGE")
         send_email(f"{name} Заполнил форму!", f"Здравье желаю мой повелитель!\nТУТ какойто чел отправил форму, говорит что сильный психолог!\nВот его данные:\nИмя: {name}\nФамилия: {surname}\nЕмаил: {email}\n\nПолностью можете посмотреть переходя по ссылке\n\nhttp://127.0.0.1:8000/admin/psychologist/psychologist/")
         print("[!]SEND MESSAGE")
@@ -53,3 +58,19 @@ def ViewFormFunction(request):
 
 def FinishViewForm(request):
     return render(request, 'forms/finish_form.html', locals())
+
+
+def CreateMakeAnAppointmentFunction(request):
+    if request.method == "POST":
+        form = MakeAnAppointmentForm(request.POST)
+        if form.is_valid():
+            form.save(commit=False)
+            return redirect('homepage')
+        return redirect('homepage')
+
+
+class CreateMakeAnAppointmentFunction(CreateView):
+    model = MakeAnAppointment
+    form_class = MakeAnAppointmentForm
+    template_name = "homepage/index.html"
+    success_url = reverse_lazy("homepage")

@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.makeIN.models import MakeAnAppointment
+
+
+admin.site.register(MakeAnAppointment)

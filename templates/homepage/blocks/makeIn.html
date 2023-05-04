@@ -7,7 +7,7 @@
                     Я хочу разминаться с короткими ребрышками коровы в солонине, как Кевин. Футбольные сосиски с ветчиной ветчины винят в этом сам жир
                 </div>
 
-                <form class="contact-form row columns_margin_bottom_40 topmargin_60" method="" action="">
+                <form class="contact-form row columns_margin_bottom_40 topmargin_60" method="post" action="{% url 'create_make' %}">
                     {% csrf_token %}
 
                     <div class="col-sm-6">

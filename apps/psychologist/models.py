@@ -36,7 +36,11 @@ class PsychologistStatus(models.Model):
 class Psychologist(models.Model):
     """Модель Психолога"""
     active = models.BooleanField(null=True, blank=True)
-    image = models.FileField(upload_to='psychologist')
+    image = models.FileField(
+        upload_to='psychologist', 
+        null=True, 
+        blank=True
+    )
     
     SEX_CHOICES = [
         ("Мужской", "Мужской" ),

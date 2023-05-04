@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>Psychologist</title>
+	<title>{{ setting.title_site }}</title>
 	<meta charset="utf-8">
 	<!--[if IE]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,7 +107,7 @@
 	</div>
 	<!-- eof #canvas -->
 
-    <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
+    {% comment %} <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script> {% endcomment %}
 	<script src="{% static 'js/compressed.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
 	{% comment %} <script src="{% static 'js/switcher.js' %}"></script> {% endcomment %}

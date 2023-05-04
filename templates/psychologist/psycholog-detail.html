@@ -43,8 +43,9 @@
 								</div>
 
 								<h1 class="entry-title">
-									<a href="" rel="bookmark">{{ psychologist.surname }}  {{ psychologist.name }}</a>
+									{{ psychologist.surname }}  {{ psychologist.name }}
 								</h1>
+								<h1 style="font-size: 15px;">{{ psychologist.status }}</h1>
 
 								<hr class="divider_30_1">
 
@@ -57,11 +58,58 @@
 								</p>
 							</div>
 							<!-- .entry-content -->
+							<hr class="divider_30_1">
+
+							<div class="entry-content">
+								<p>
+									{{ psychologist.education }}
+								</p>
+							</div>
+							<!-- .entry-content -->
+
+							<hr class="divider_30_1">
+
+							<div class="entry-content">
+								<p>
+									Основная специализация: {{ psychologist.main_specialization }}
+								</p>
+							</div>
+							<!-- .entry-content -->
+							<div class="entry-content">
+								<p>
+									Дополнительная специализация: {{ psychologist.additional_specialization_one }}
+								</p>
+							</div>
+							<!-- .entry-content -->
+							<hr class="divider_30_1">
+
+							<div class="entry-content">
+								<p>
+									Цена за онлайн консультацию: {{ psychologist.cost_of_online_consultation }}₽
+								</p>
+							</div>
+							<div class="entry-content">
+								<p>
+									Цена за личного приема: {{ psychologist.cost_of_personal_reception }}₽
+								</p>
+							</div>
+							<hr class="divider_30_1">
+
+							{% if psychologist.address_of_the_reception_room is not None %}
+							<div class="entry-content">
+								<p>
+									Адрес приема: {{ psychologist.address_of_the_reception_room }}
+								</p>
+							</div>
+							{% else %}
+							{% endif %}
 
 
+
+							{% if psychologist.blog_author is not None %}
 							<div class="author-meta side-item content-padding">
 
-								<h2 style="margin-bottom: -30px;">ALL BLOGS</h2>
+								<h2 style="margin-bottom: -30px;">Все блоги</h2>
 								{% for p in psychologist.blog_author.all %}
 								<div class="row display_table_md">
 									
@@ -101,6 +149,12 @@
 								</div>
 								{% endfor %}
 							</div>
+							{% else %}
+							<div class="author-meta side-item content-padding">
+
+								<h2 style="margin-bottom: -30px;">Нету Блогов</h2>
+							</div>
+							{% endif %}
 						</div>
 
 					</div>
@@ -113,96 +167,65 @@
 
 
 					<div class="widget widget_apsc_widget">
-						<h3 class="widget-title">Get In Touch</h3>
+						<h3 class="widget-title">Связаться</h3>
 						<div class="apsc-icons-wrapper clearfix apsc-theme-4">
+							{% if psychologist.facebook %}
 							<div class="apsc-each-profile">
-								<a class="apsc-facebook-icon clearfix" href="#">
+								<a class="apsc-facebook-icon clearfix" href="{{ psychologist.facebook }}" target="_blank">
 									<div class="apsc-inner-block">
 										<span class="social-icon">
 											<i class="fa fa-facebook apsc-facebook"></i>
 											<span class="media-name">Facebook</span>
 										</span>
-										<span class="apsc-count">9.8K</span>
-										<span class="apsc-media-type">Fans</span>
 									</div>
 								</a>
 							</div>
+							{% else %}
+							{% endif %}
+							{% if psychologist.twitter %}
 							<div class="apsc-each-profile">
-								<a class="apsc-twitter-icon clearfix" href="#">
+								<a class="apsc-twitter-icon clearfix" href="{{ psychologist.twitter }}" target="_blank">
 									<div class="apsc-inner-block">
 										<span class="social-icon">
 											<i class="fa fa-twitter apsc-twitter"></i>
 											<span class="media-name">Twitter</span>
 										</span>
-										<span class="apsc-count">4.9K</span>
-										<span class="apsc-media-type">Followers</span>
 									</div>
 								</a>
 							</div>
+							{% else %}
+							{% endif %}
+							{% if psychologist.skype %}
 							<div class="apsc-each-profile">
-								<a class="apsc-google-plus-icon clearfix" href="#">
+								<a class="apsc-google-plus-icon clearfix" href="{{ psychologist.skype }}" target="_blank">
 									<div class="apsc-inner-block">
 										<span class="social-icon">
 											<i class="apsc-googlePlus fa fa-google-plus"></i>
-											<span class="media-name">google+</span>
+											<span class="media-name">Skype</span>
 										</span>
-										<span class="apsc-count">10.1M</span>
-										<span class="apsc-media-type">Followers</span>
 									</div>
 								</a>
 							</div>
+							{% else %}
+							{% endif %}
+							{% if psychologist.instagram %}
 							<div class="apsc-each-profile">
-								<a class="apsc-instagram-icon clearfix" href="#">
+								<a class="apsc-instagram-icon clearfix" href="{{ psychologist.instagram }}" target="_blank">
 									<div class="apsc-inner-block">
 										<span class="social-icon">
 											<i class="apsc-instagram fa fa-instagram"></i>
 											<span class="media-name">Instagram</span>
 										</span>
-										<span class="apsc-count">4</span>
-										<span class="apsc-media-type">Followers</span>
 									</div>
 								</a>
 							</div>
-							<div class="apsc-each-profile">
-								<a class="apsc-youtube-icon clearfix" href="#">
-									<div class="apsc-inner-block">
-										<span class="social-icon">
-											<i class="apsc-youtube fa fa-youtube"></i>
-											<span class="media-name">Youtube</span>
-										</span>
-										<span class="apsc-count">2.2K</span>
-										<span class="apsc-media-type">Subscriber</span>
-									</div>
-								</a>
-							</div>
-
+							{% else %}
+							{% endif %}
 						</div>
 
 					</div>
 
 
-					<div class="widget widget_mailchimp">
-
-						<h3 class="widget-title">Newsletter</h3>
-
-						<form class="signup form-inline" action="./" method="get">
-							<div class="form-group">
-								<input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
-							</div>
-							<button type="submit" class="theme_button">Send</button>
-							<div class="response"></div>
-						</form>
-
-						<p class="topmargin_20">Stay updated with our latest news and updates.</p>
-
-					</div>
-
-
-					<div class="widget widget_flickr">
-
-						<h3 class="widget-title">Flickr Widget</h3>
-						<ul id="flickr"></ul>
-					</div>
 				</aside>
 				<!-- eof aside sidebar -->
 

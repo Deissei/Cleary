@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends "base/base.html" %}
 <html>
   <head>
     <meta charset="UTF-8">
@@ -56,8 +57,52 @@
     </style>
   </head>
   <body>
-      <h2 style="display: flex; justify-content: center; font-size: 30px; padding-bottom: 50px; padding-top: 50px;">Заполнение Данных</h2>
-      <form action="{% url 'compl_form' %}" method="post" style="display: flex; justify-content: center;">
+    {% comment %} <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create</button>
+    </form>  {% endcomment %}
+    {% block content %}
+    <form method="post" enctype="multipart/form-data" style="display: flex; justify-content: center; background-color: white;">
+      <div>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <table class="table">
+          {{ formset.management_form }}
+          {{ formset.non_form_errors }}
+          {% for form in formset.forms %}
+              {% if forloop.first %}
+                  <thead>
+                  <tr>
+                      {% for field in form.visible_fields %}
+                          <th>{{ field.label|capfirst }}</th>
+                      {% endfor %}
+                  </tr>
+                  </thead>
+              {% endif %}
+              <tr class="formset_row">
+                  {% for field in form.visible_fields %}
+                      <td>
+                      {% if forloop.first %}
+                          {% for hidden in form.hidden_fields %}
+                              {{ hidden }}
+                          {% endfor %}
+                      {% endif %}
+                      {{ field.errors.as_ul }}
+                      {{ field }}
+                      </td>
+                  {% endfor %}
+              </tr>
+          {% endfor %}
+      </table>
+      <button type="submit" style="font-size: 20px;" class="btn btn-success d-block mx-auto">Отправить Данные</button>
+      </div>
+    </form>
+    {% endblock content %}
+
+      {% comment %} <h2 style="display: flex; justify-content: center; font-size: 30px; padding-bottom: 50px; padding-top: 50px;">Заполнение Данных</h2>
+      <form action="{% url '__create' %}" method="post" style="display: flex; justify-content: center;">
+        {{ form.as_p }}
         {% csrf_token %}
         <div class="forms" style="width: 35%; padding-bottom: 100px;">
             <label for="surname" name="surname" class="required">Фамилия:</label>
@@ -67,7 +112,7 @@
             <input for="name" type="text" id="name" name="name" required>
 
             <label for="image" class="required" name="image">Ваше Фото:</label>
-            <input for="image" type="file" id="image" name="image" accept="image/*" style="padding-bottom: 15px;">
+            <input for="image" type="file" id="image" name="image" style="padding-bottom: 15px;">
 
             <label for="email" class="required" name="email">Почта:</label>
             <input for="email" type="text" id="email" name="email" placeholder="extends@gmail.com">
@@ -157,6 +202,6 @@
         </div>
     </form>
       
-
+' %} {% endcomment %}
 </body>
 </html>
