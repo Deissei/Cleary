@@ -17,7 +17,7 @@ class PsychologistListView(ListView):
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
         context['setting'] = SettingsHomePage.objects.get(id=1)
-
+        return context
 
 class PsychologistDetailView(DetailView):
     model = Psychologist
@@ -27,6 +27,7 @@ class PsychologistDetailView(DetailView):
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
         context['setting'] = SettingsHomePage.objects.get(id=1)
+        return context
 
 
 class HomePage(View):
@@ -45,3 +46,4 @@ class PsychologistCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['setting'] = SettingsHomePage.objects.get(id=1)
+        return context
